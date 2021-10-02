@@ -8,51 +8,46 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
   <title>Frontend Mentor | Base Apparel coming soon page</title>
 
 
 </head>
 
 <body>
+  <header><img src="./images/logo.svg" alt="logo" class="logo"></header>
 
-  <div class="container">
-    <header role="main" class="header">
-      <img src="/images/logo.svg" alt="Base Apparel" class="logo">
-    </header>
-    <section role="none" class="hero">
-      <img src="/images/hero-mobile.jpg" alt="" class="hero-image">
-    </section>
-    <main class="main-content">
-      <h1 role="heading" aria-level="1" class="main-heading"> <span>We're</span> <br> coming <br> soon</h1>
-      <p role="article" class="main-para">Hello fellow shoppers! We're currently building our new fashion store.
+  <main class="container">
+    <div class="main-content">
+      <h1> <span>we're</span><br>coming<br>soon</h1>
+      <p>Hello fellow shoppers! We're currently building our new fashion store.
         Add your email below to stay up-to-date with announcements and our launch deals.</p>
-      <form action="">
-        <div class="email-container">
-          <input type="email" class="email" id="email" name="email" placeholder="Email Address">
-          <!-- <img src="/images/icon-error.svg" alt="" class="error"> -->
-          <button type="submit" class="submit" value="" id="email" name="email">
-        </div>
+      <form action="#">
+        <input type="email" placeholder="Email Address">
+        <img src="/images/icon-error.svg" alt="" class="error-icon">
+        <button type="submit"><img src="./images/icon-arrow.svg" alt="submit"></button>
+        <p class="error-text">Please provide a valid email</p>
       </form>
-    </main>
-  </div>
+    </div>
+    <div class="hero"></div>
+  </main>
+
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. <br>
+      Coded by <a href="https://www.frontendmentor.io/profile/Tink3rball3r" target="_blank">Matthew Rittenhouse</a>.
+    </p>
+  </footer>
+</body>
+
+</html>
 
 
-
-
-
-
-  <!-- <footer>
+<!-- <footer>
     <p class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
       Coded by <a href="#">Your Name Here</a>.
     </p>
   </footer> -->
-</body>
-
-</html>
 
 <!-- We're coming soon
 

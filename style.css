@@ -1,11 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+
+/* font-family: 'Josefin Sans', sans-serif; */
+
 :root {
 	/* colors */
 	--red1: rgb(206, 151, 151);
 	--red2: rgb(249, 98, 98);
 	--red3: rgb(65, 58, 58);
 	/* gradients */
-	--grad1: linear-gradient(135deg, rgba(255, 255, 255, 1) 20%, rgba(255, 245, 245, 1) 100%);
-	--grad2: linear-gradient(135deg, rgba(248, 191, 191, 1) 20%, rgba(238, 140, 140, 1) 100%);
+	--grad1: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+	--grad2: linear-gradient(135deg, hsl(0, 80%, 86%) 20%, hsl(0, 74%, 74%) 100%);
+	--grad3: linear-gradient(135deg, hsl(0, 80%, 86%), hsla(0, 52%, 80%, 0.781));
 	/* font weights */
 	--normal: 300;
 	--medium: 400;
@@ -13,102 +18,257 @@
 }
 
 * {
-	margin: 0;
 	padding: 0;
+	margin: 0;
 	box-sizing: border-box;
 }
 
 body {
-	min-height: 100vh;
-	background: rgb(255, 255, 255);
-	background: var(--grad1);
 	font-family: 'Josefin Sans', sans-serif;
+	font-size: 16px;
+	background-image: var(--grad1);
 }
+
+header {
+	height: auto;
+}
+
+header img {
+	width: 150px;
+	margin: 30px 0 20px 30px;
+}
+
 .container {
-	display: grid;
-	grid-template-columns: 1fr;
-	grid-template-rows: min-content 1fr 1fr;
-}
-.logo {
-	width: 30%;
-}
-
-.hero-image {
-	display: block;
+	min-height: 100vh;
 	width: 100%;
-}
-
-.hero {
-	grid-row: 2 / span 1;
-	margin-bottom: 50px;
-}
-
-.header {
-	grid-row: 1 / span 1;
-	padding: 40px 0 20px 30px;
-}
-
-.main-content {
-	grid-row: 3 / span 1;
-	width: 95%;
-	margin: 0 auto;
-}
-
-.main-heading,
-.main-para {
+	display: flex;
+	flex-direction: column-reverse;
+	align-items: center;
+	justify-content: flex-end;
 	text-align: center;
 }
 
-.main-heading span,
-.main-para {
-	color: var(--red1);
+.container .main-content {
+	width: 100%;
+	height: auto;
+	padding: 50px 30px 0 30px;
 }
 
-.main-heading {
-	text-transform: uppercase;
+.hero {
+	width: 100%;
+	height: 300px;
+	background-image: url(./images/hero-mobile.jpg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+}
+
+.container .main-content h1 {
+	color: var(--red3);
+	font-size: 3rem;
 	font-weight: 600;
-	letter-spacing: 10px;
-	margin-bottom: 20px;
+	text-transform: uppercase;
+	letter-spacing: 0.5rem;
 }
 
-.main-heading span {
+.container .main-content h1 span {
+	color: var(--red1);
 	font-weight: 300;
 }
 
-.main-para {
-	line-height: 23px;
-	margin-bottom: 40px;
+.container .main-content p {
+	max-width: 500px;
+	margin: 20px auto 40px auto;
+	color: var(--red1);
+	line-height: 1.5rem;
+	font-size: 1rem;
 }
 
-.email-container {
-	display: grid;
-	grid-template-columns: 4fr 1fr;
-	width: 90%;
+.container .main-content form {
+	position: relative;
+	display: block;
+	height: 45px;
+	width: 100%;
 	margin: 0 auto;
-	border: 0.5px solid var(--red1);
-	border-radius: 50px;
 }
 
-.email {
-	grid-column: 1/ 2;
-	border: none;
+.container .main-content form input {
+	position: absolute;
+	width: 100%;
+	height: 100%;
 	outline: none;
-	background: transparent;
+	border-radius: 50px;
+	border: 1px solid var(--red1);
+	left: 0;
+	top: 0;
 	text-indent: 20px;
-	font-size: 16px;
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 1.1rem;
+	background: transparent;
+	opacity: 0.6;
 }
 
-.email::placeholder {
-	font-family: 'Josefin Sans', sans-serif;
+.container .main-content form input::placeholder {
 	color: var(--red1);
 }
 
-.submit {
-	grid-column: 2 /-1;
-	width: 100%;
-	height: 45px;
-	border: none;
+.container .main-content form button {
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 70px;
+	height: 100%;
 	border-radius: 50px;
-	background: url('/images/icon-arrow.svg') no-repeat center, linear-gradient(135deg, rgba(248, 191, 191, 1) 20%, rgba(238, 140, 140, 1) 100%);
-	box-shadow: 5px 5px 35px -10px var(--red2);
+	border: none;
+	outline: none;
+	background-image: var(--grad2);
+	box-shadow: 0px 0px 18px 1px rgba(249, 98, 98, 0.383);
+}
+
+.container .main-content form button:hover {
+	background-image: var(--grad3);
+	box-shadow: 0px 0px 13px 2px #f4aaabbf;
+}
+
+.container .main-content form .error-icon {
+	display: none;
+	position: absolute;
+	top: 25%;
+	right: 85px;
+}
+.container .main-content form .error-text {
+	position: absolute;
+	display: none;
+	top: 30px;
+	left: 20px;
+	font-size: 0.85rem;
+	color: var(--red2);
+}
+
+footer {
+	text-align: center;
+	padding: 0 10px 20px 10px;
+}
+
+footer a {
+	color: var(--red3);
+	text-decoration: none;
+}
+
+@media (min-width: 801px) {
+	header {
+		position: absolute;
+		padding-left: 50px;
+	}
+
+	header img {
+		width: 110px;
+		margin: 20px 0 10px 10px;
+	}
+
+	.hero {
+		width: 50%;
+		height: 100vh;
+		background-image: url(./images/hero-desktop.jpg);
+		background-position: center;
+		background-size: cover;
+	}
+	.container {
+		flex-direction: row;
+		padding-top: 0;
+		padding-bottom: 0;
+		text-align: left;
+	}
+
+	.container .main-content {
+		height: 100vh;
+		padding-top: 18vh;
+		padding-left: 50px;
+		width: 60%;
+		background-image: url(./images/bg-pattern-desktop.svg);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+	}
+
+	.container .main-content h1 {
+		font-size: 2.5rem;
+	}
+
+	.container .main-content p {
+		margin: 20px 0 20px 0;
+		font-size: 0.9rem;
+	}
+
+	.container .main-content form {
+		margin: 0;
+	}
+}
+
+@media (min-width: 1080px) {
+	header img {
+		width: 180px;
+		margin: 50px 0 10px 40px;
+	}
+
+	.container .main-content {
+		padding-left: 90px;
+		padding-top: 28vh;
+	}
+
+	.container .main-content h1 {
+		font-size: 3.5rem;
+	}
+
+	.container .main-content p {
+		font-size: 1.1rem;
+		max-width: 70%;
+	}
+
+	.container .main-content form {
+		width: 400px;
+	}
+}
+
+@media (min-width: 1600px) {
+	header img {
+		width: 220px;
+		margin: 50px 0 10px 130px;
+	}
+
+	.container .main-content {
+		padding-left: 220px;
+		padding-top: 28vh;
+	}
+
+	.container .main-content h1 {
+		font-size: 4.5rem;
+	}
+
+	.container .main-content p {
+		font-size: 1.3rem;
+		line-height: 2rem;
+		max-width: 70%;
+		margin: 30px 0 50px 0;
+	}
+	.container .main-content form {
+		height: 55px;
+	}
+	.container .main-content form input {
+		font-size: 1.3rem;
+	}
+	.container .main-content form button {
+		width: 100px;
+	}
+}
+
+@media (min-width: 2000px) {
+	.container .main-content p {
+		font-size: 2rem;
+	}
+
+	.container .main-content form {
+		width: 600px;
+	}
 }
