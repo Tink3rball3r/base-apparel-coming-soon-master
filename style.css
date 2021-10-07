@@ -117,7 +117,7 @@ header img {
 	position: absolute;
 	top: 0;
 	right: 0;
-	width: 70px;
+	width: 20%;
 	height: 100%;
 	border-radius: 50px;
 	border: none;
@@ -135,7 +135,7 @@ header img {
 	display: none;
 	position: absolute;
 	top: 25%;
-	right: 85px;
+	right: 25%;
 }
 .container .main-content form .error-text {
 	position: absolute;
@@ -146,14 +146,11 @@ header img {
 	color: var(--red2);
 }
 
-footer {
-	text-align: center;
-	padding: 0 10px 20px 10px;
+.container .main-content form.error .error-icon {
+	display: block;
 }
-
-footer a {
-	color: var(--red3);
-	text-decoration: none;
+.container .main-content form.error .error-text {
+	display: block;
 }
 
 @media (min-width: 801px) {
@@ -163,8 +160,8 @@ footer a {
 	}
 
 	header img {
-		width: 110px;
-		margin: 20px 0 10px 10px;
+		width: 150px;
+		margin: 40px 0 10px 10px;
 	}
 
 	.hero {
@@ -183,7 +180,7 @@ footer a {
 
 	.container .main-content {
 		height: 100vh;
-		padding-top: 18vh;
+		padding-top: 30vh;
 		padding-left: 50px;
 		width: 60%;
 		background-image: url(./images/bg-pattern-desktop.svg);
@@ -193,7 +190,7 @@ footer a {
 	}
 
 	.container .main-content h1 {
-		font-size: 2.5rem;
+		font-size: 2.9rem;
 	}
 
 	.container .main-content p {
@@ -223,11 +220,11 @@ footer a {
 
 	.container .main-content p {
 		font-size: 1.1rem;
-		max-width: 70%;
+		max-width: 95%;
 	}
 
 	.container .main-content form {
-		width: 400px;
+		width: 500px;
 	}
 }
 
